@@ -1,0 +1,11 @@
+
+
+        Monitoring /proc/56685/stat:
+
+Time        State           SysTm    UsrTm
+  0     Sleeping(memory)       0        0
+  2     Running                0        0
+  3     Sleeping(memory)       0       73
+  6     Running                0      100
+  7     Sleeping(memory)       0      143
+  9     Traced/Stopped         0      143
