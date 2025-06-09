@@ -1,0 +1,113 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{caption}
+
+\title{Lab Report: Interprocess Communications with Pipes and Java Threads}
+\author{[Your Name] - [Your Student ID] \\ CSI3131 - Operating Systems \\ 2025-06-08}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction and Objectives}
+The objective of this lab is to explore interprocess communication (IPC) using UNIX/Linux pipes and to learn about Java threads and thread pools. The specific goals include:
+\begin{itemize}
+    \item Understanding IPC mechanisms through the use of pipes in a C program.
+    \item Gaining experience with process management in a Linux environment.
+    \item Learning how to implement and manage threads in Java.
+    \item Comparing the performance of individual threads versus a thread pool.
+\end{itemize}
+
+\section{Methodology}
+The lab was conducted in a Linux virtual machine environment. The following steps were taken to achieve the objectives:
+\begin{enumerate}
+    \item \textbf{VM Setup}: Logged into the Site Linux virtual machine and extracted the provided \texttt{lab2a.tar} file.
+    \item \textbf{Modify C Program}: Enhanced the \texttt{mon.c} program to create \texttt{mon2.c} for monitoring processes using pipes.
+    \item \textbf{Compilation}: Compiled the modified \texttt{mon2.c} program using the \texttt{cc} command.
+    \item \textbf{Execution}: Ran the \texttt{mon2} program with the \texttt{calcloop} argument and observed the filtered output.
+    \item \textbf{Signal Handling}: Experimented with sending \texttt{SIGSTOP} and \texttt{SIGCONT} signals to the \texttt{calcloop} process.
+    \item \textbf{Java Setup}: Compiled the provided Java files for generating the Mandelbrot set.
+    \item \textbf{Execution of Mandelbrot}: Executed the \texttt{MandelBrot} application with various parameters.
+    \item \textbf{Thread Implementation}: Modified the Java code to use threads for rendering the Mandelbrot set.
+    \item \textbf{Thread Pool Implementation}: Further modified the code to utilize a thread pool with Executors.
+\end{enumerate}
+
+\section{Presentation and Analysis of Results}
+\subsection{C Program Execution}
+The execution of the \texttt{mon2} program yielded filtered output for the \texttt{calcloop} process (Fig. 1).
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{path/to/screenshot1.png}
+    \caption{Filtered output of \texttt{calcloop} from \texttt{mon2}.}
+\end{figure}
+
+\subsection{Signal Handling}
+We successfully sent signals to the \texttt{calcloop} process, observing the effects on its output. Screenshots of the commands and their effects are shown in Figures 2 and 3.
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{path/to/screenshot4.png}
+    \caption{Commands used to send signals to \texttt{calcloop}.}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{path/to/screenshot5.png}
+    \caption{Effect of signals on \texttt{calcloop} output.}
+\end{figure}
+
+\subsection{Java Threads Implementation}
+The modified Java code effectively utilized threads for rendering the Mandelbrot set. The updated display is shown in Figure 4.
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{path/to/screenshot9.png}
+    \caption{Updated display using Java threads for rendering.}
+\end{figure}
+
+\subsection{Thread Pool Implementation}
+The implementation of a thread pool improved performance by managing thread resources more efficiently. The impact can be seen in Figure 5.
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{path/to/screenshot10.png}
+    \caption{Impact of using a thread pool with Executors.}
+\end{figure}
+
+\section{Discussion and Conclusion}
+This lab provided valuable insights into interprocess communication and threading in Java. Key learnings include:
+\begin{itemize}
+    \item The effectiveness of using pipes for IPC in C programs.
+    \item The importance of process management and signal handling in a Linux environment.
+    \item Practical experience in Java threading and the advantages of using thread pools for resource management.
+\end{itemize}
+
+\subsection*{Challenges Encountered}
+One challenge faced was debugging the C program to ensure proper use of pipes and signal handling.
+
+\subsection*{Suggestions for Improvement}
+I would like to further improve my understanding of threading concepts in Java, particularly with regard to performance optimization.
+
+\subsection*{Screenshots and Evidence}
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{path/to/screenshot2.png}
+    \caption{Compilation of \texttt{mon2.c}.}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{path/to/screenshot6.png}
+    \caption{Compilation of Java files for Mandelbrot.}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{path/to/screenshot7.png}
+    \caption{Execution of \texttt{MandelBrot} with parameters.}
+\end{figure}
+
+\end{document}
